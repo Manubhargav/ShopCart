@@ -25,3 +25,50 @@
              this.route.params.subscribe((params:Params)=>{
        let  id=parseInt(params['cat']);
        this.catName=id;
+
+      <div class="row">
+      <div *ngIf="catName=='Men'">
+         <div class="col-md-4" *ngFor="let data of details | slice:0:6; let i = index  ">
+            <img  class="img-responsive" src="{{data.url}}" alt="pic">
+            <p style="text-align:center" >{{data.name}}
+            </p>
+         </div>
+      </div>
+    </div>
+    <div class="row">
+    <div [ngSwitch]="true" class="col-md-4">
+    <div *ngSwitchCase="catName=='Men'">sample1</div>
+    <div *ngSwitchCase="catName=='Formals'">sample2</div>
+    </div>
+    </div>
+    
+
+
+
+    <div class="row">
+      <div *ngIf="catName=='Formals'">
+         <div class="col-md-4" *ngFor="let data of details | slice:16:18; let i = index  ">
+            <img  class="img-responsive" src="{{data.url}}" alt="pic">
+            <p style="text-align:center" >{{data.name}}
+            </p>
+         </div>
+      </div>
+       </div>
+   <div class="row">
+   <div *ngIf="catName=='Women'">
+      <div class="col-md-4" *ngFor="let data of details | slice:6:12; let i = index  ">
+         <img  class="img-responsive" src="{{data.url}}" alt="pic">
+         <p style="text-align:center">{{data.name}}
+         <p>
+      </div>
+   </div>
+   </div>
+   <div class="row">
+   <div *ngIf="catName=='Kids'">
+      <div class="col-md-4" *ngFor="let data of details | slice:12:16; let i = index  ">
+         <img  class="img-responsive" src="{{data.url}}" alt="pic">
+         <p style="text-align:center">{{data.name}}
+         <p>
+      </div>
+   </div>
+</div>`

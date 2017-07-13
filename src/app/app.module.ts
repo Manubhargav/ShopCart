@@ -9,21 +9,28 @@ import {menComponent} from './app.menComponent';
 import {advertiseComponent} from './app.advertise';
 import {flashComponent} from './app.flashDetails';
 import {catComponent} from './app.catdetails';
+import {cartComponent} from './app.cart';
+import {reactiveComponent} from './app.reactive';
+import {ReactiveFormsModule} from '@angular/forms';
+import {finalComponent} from './app.final';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule,ReactiveFormsModule,
     FormsModule, HttpModule,RouterModule.forRoot([{
-    path:'Men',component:menComponent},
+    path:'Flashdeals',component:menComponent},
     { path:'Home',component:advertiseComponent},
-    { path: 'Men/:id', component: flashComponent },
+    { path: 'Flashdeals/:id', component: flashComponent },
      { path: 'Home/:cat', component: catComponent },
+      { path: 'cart', component: cartComponent },
+       { path: 'form', component: reactiveComponent },
+       {path: 'detail', component: finalComponent},
 
     { path:'', redirectTo: '/Home', pathMatch: 'full' }
     ])
   ],
   declarations: [
-    AppComponent, LoginComponent,menComponent,advertiseComponent,flashComponent,catComponent
+    AppComponent, LoginComponent,menComponent,advertiseComponent,flashComponent,catComponent,cartComponent,reactiveComponent,finalComponent
   ],
   
   bootstrap: [ AppComponent ]

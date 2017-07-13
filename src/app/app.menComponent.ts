@@ -28,7 +28,7 @@ constructor(private router:Router){}
     {"id":6,"name":"wallet","color":"Black","price":200000,"desc":"The coolest watch present in market","url":"http://i.ebayimg.com/00/s/NTAwWDUwMA==/z/UmUAAMXQVT9SsR-n/$_3.JPG?set_id=2"}]
 
 onSelect(item:any){
-    this.router.navigate(['/Men',item.id])
+    this.router.navigate(['/Flashdeals',item.id])
 }
 
 

@@ -1,5 +1,9 @@
 import {Component,OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {AppComponent} from './app.component';
+import {appService} from './app.service'
+import somename = require('./global');
+
 @Component({
 template:`
     <div *ngFor="let data of details|slice:itemid-1:itemid; let i = index;">
@@ -8,6 +12,7 @@ template:`
     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}<p>
     <p><em><b>Color:</b></em>{{data.color}}<p>
     <p><em><b>Description: </b></em>{{data.desc}}</p>
+    <button (click)="gc.getCart(data)">Add to Cart</button> 
     </div>`
 })
 
@@ -21,7 +26,7 @@ export class flashComponent implements OnInit{
     {"id":6,"name":"wallet","color":"Black","price":1000,"desc":"The coolest wallet present in market","url":"http://i.ebayimg.com/00/s/NTAwWDUwMA==/z/UmUAAMXQVT9SsR-n/$_3.JPG?set_id=2"}]
 
 public itemid:any;
-constructor(private route:ActivatedRoute){}
+constructor(private route:ActivatedRoute, public gc:appService){}
 ngOnInit(){
     let id=this.route.snapshot.params['id'];
     this.itemid=id;

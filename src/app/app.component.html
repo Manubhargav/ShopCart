@@ -20,11 +20,13 @@
          </ul>
          <form class="navbar-form navbar-left" role="search" >
             <div class="form-group">
-               <input type="text" class="form-control"> 
-            </div>
-            <button type="submit" class="btn btn-default"><img style="width:20px;height:20px" src="http://www.iconsdb.com/icons/preview/white/search-3-xxl.png" alt="search"></button>
+               <input type="text" class="form-control" #refsearch placeholder="Enter atleast 3 chars">
+            
+            <button type="submit" class="btn btn-default" (click)="onmatch(refsearch.value)"><img style="width:20px;height:20px" src="http://www.iconsdb.com/icons/preview/white/search-3-xxl.png" alt="search"></button>
+         </div>
          </form>
          <ul class="nav navbar-nav navbar-right">
+            <li><button type="submit" class="btn btn-default" routerLink="/cart">Cart</button></li>
             <li *ngIf="value" style="color:white"><a>{{ "Welcome "+value}}</a></li>
             <li *ngIf="emp"><button class="btn btn-primary" (click)='Login()'>Login</button></li>
             <li *ngIf="emp1"><button class="btn btn-primary" (click)='logout()'>Logout</button></li>
@@ -51,7 +53,7 @@
          <router-outlet></router-outlet>
       </div>
       <div class="col-md-2 col-lg-2" style="height: 81.75vh;overflow: auto;box-shadow:0px 0 6px #aaaaaa;">
-         <h2 ><a routerLink="/Men" routerLinkActive="active"> <b>Flash Deals!</b></a></h2>
+         <h2 ><a routerLink="/Flashdeals" routerLinkActive="active"> <b>Flash Deals!</b></a></h2>
          <hr>
          <div class="row" >
             <img class="img-responsive" data-toggle="modal" data-target="#myModal2" src="https://ae01.alicdn.com/kf/HTB1pWBJMpXXXXblXXXXq6xXFXXX0/Spring-2017-girls-Plaid-dress-brand-font-b-children-s-b-font-clothing-kids-dresses-for.jpg" alt="book" class="img-responsive" style="height:40vh">
@@ -77,13 +79,14 @@
                            <p><em><b>Color:</b></em>{{data.color}}
                            <p>
                            <p><em><b>Description: </b></em>{{data.desc}}</p>
+                            <div >
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <button type="button" class="btn btn-primary" data-dismiss="modal"(click)="add(data)">Add to Cart</button>
+                  </div>
                         </div>
                      </div>
                   </div>
-                  <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                     <button type="button" class="btn btn-primary">View</button>
-                  </div>
+                 
                </div>
             </div>
          </div>
@@ -112,13 +115,14 @@
                         <p><em><b>Color:</b></em>{{data.color}}
                         <p>
                         <p><em><b>Description: </b></em>{{data.desc}}</p>
+                         <div>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="add(data)"data-dismiss="modal">Add to Cart</button>
+               </div>
                      </div>
                   </div>
                </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">View</button>
-               </div>
+              
             </div>
          </div>
       </div>
