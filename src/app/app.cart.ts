@@ -6,7 +6,7 @@ import somename = require('./global');
     template:`
 <div on-mouseover="compute()" (click)="compute()">
     Following are the items:<h3 *ngFor="let item of cart">{{item.name}} : {{item.price}} </h3>
-    <br/><h3> Total: {{sum}}</h3>
+    <br/><h3> Total Amount: {{sum}}</h3>
     </div>
     <button type="submit" routerLink="/form" class="btn btn-primary">Click To Buy</button>`
 })

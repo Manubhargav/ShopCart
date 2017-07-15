@@ -19,6 +19,8 @@ export class AppComponent implements OnInit{
   public emp1:any;
   public cart:any=[];
   public flag=true;
+  
+
 
    Login(){
      this.raw = true ;
@@ -29,12 +31,12 @@ export class AppComponent implements OnInit{
   onComp(value: any) {
    this.value=value;
    this.emp1=true;
-  
   }
   logout(){
     this.emp=true;
     this.emp1=false;
     this.value=false;
+  
   }
   expand(p: any) {
      p.expanded = !p.expanded;
@@ -42,6 +44,7 @@ export class AppComponent implements OnInit{
   data:any=[];
   constructor(private _data1:appService,private router:Router){}
   ngOnInit(){
+    this.cart=somename.gcart;
     this._data1.getData()
     .subscribe(res => this.data=res);
      
@@ -89,7 +92,6 @@ partial(data:any,data2:any){
     if(data2.slice(0,a).toLowerCase()==data.toLowerCase()){
       return true;
     }
-    
     return false;
   }
  

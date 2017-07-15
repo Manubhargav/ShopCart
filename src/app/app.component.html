@@ -26,10 +26,10 @@
          </div>
          </form>
          <ul class="nav navbar-nav navbar-right">
-            <li><button type="submit" class="btn btn-default" routerLink="/cart">Cart</button></li>
+            <li class="btn btn-default" routerLink="/cart"><img src="http://www.iconsdb.com/icons/preview/white/shopping-cart-xxl.png" style="width:20px;height:20px"><li class="badge" style="color:blue">{{cart.length}}</li></li>
             <li *ngIf="value" style="color:white"><a>{{ "Welcome "+value}}</a></li>
             <li *ngIf="emp"><button class="btn btn-primary" (click)='Login()'>Login</button></li>
-            <li *ngIf="emp1"><button class="btn btn-primary" (click)='logout()'>Logout</button></li>
+            <li *ngIf="emp1"><button class="btn" (click)='logout()'><a href="/Home">Logout</a></button></li>
          </ul>
       </div>
    </div>

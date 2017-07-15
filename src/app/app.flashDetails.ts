@@ -12,7 +12,7 @@ template:`
     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}<p>
     <p><em><b>Color:</b></em>{{data.color}}<p>
     <p><em><b>Description: </b></em>{{data.desc}}</p>
-    <button (click)="gc.getCart(data)">Add to Cart</button> 
+    <button (click)="gc.getCart(data)" class="btn btn-success">Add to Cart</button> 
     </div>`
 })
 
