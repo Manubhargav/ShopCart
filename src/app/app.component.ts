@@ -2,6 +2,7 @@ import { Component,OnInit,Pipe,PipeTransform } from '@angular/core';
 import { appService } from './app.service';
 import {Router} from '@angular/router';
 import somename = require('./global');
+import {LocalStorage,LocalStorageService, SessionStorageService} from 'ng2-webstorage';
 
 @Component({
   selector: 'my-app',
@@ -14,12 +15,11 @@ export class AppComponent implements OnInit{
   {x:'Women',y:["Western Wear","Ethnic Wear","Sports & Active Wears","Women Footwear","Women Accesorries","Jewellery"]},{x:'Kids',y:["Toys","School Supplies","Clothing","Kids Footwear"]}]
   public raw:any;
   public emp:any=true;
-  public value:any;
+  @LocalStorage()  public value:any;
   public valid:any=false;
   public emp1:any;
   public cart:any=[];
   public flag=true;
-  
 
 
    Login(){
@@ -35,18 +35,41 @@ export class AppComponent implements OnInit{
   logout(){
     this.emp=true;
     this.emp1=false;
-    this.value=false;
+    // this.value=false;
+     
+    this.storage.clear('boundValue');
+    console.log(this.storage);
+      this.storage.clear(); //clear all the managed storage items
+    
   
   }
   expand(p: any) {
      p.expanded = !p.expanded;
   }
   data:any=[];
-  constructor(private _data1:appService,private router:Router){}
+  constructor(private _data1:appService,private router:Router, private storage:LocalStorageService){}
   ngOnInit(){
-    this.cart=somename.gcart;
+   
+      this.cart=somename.gcart;
+    
+    
     this._data1.getData()
     .subscribe(res => this.data=res);
+
+    // localStorage["cart"] = JSON.stringify(this.cart);
+
+    // this.cart = JSON.parse(localStorage["cart"]);
+ 
+    // console.log(this.cart);
+
+  //  this.storage.observe('boundValue')
+  //       .subscribe((newValue:any) => {
+  //       console.log(newValue);})
+    
+  //  this.storage.observe('boundValue2')
+  //       .subscribe((newValue1:any) => {
+  //       console.log(newValue1);})
+     
      
   }
   
@@ -56,6 +79,7 @@ onSelect(cat:any){
 add(data:any){
     alert("added to ur cart "+data.name)
     somename.gcart.push(data);
+    
     // somename.total=0;
     // for (var number of somename.gcart) {
     //     somename.total+=number.price;

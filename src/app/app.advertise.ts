@@ -48,6 +48,7 @@ template:`<h5 style="text-align: center;padding:0px;"><b>CHECK WHAT'S NEW!</b></
                             <span></span>
                             <span class="sr-only">Next</span>
                           </a>
-              </div>`
+              </div>
+              `
 })
 export class advertiseComponent{}

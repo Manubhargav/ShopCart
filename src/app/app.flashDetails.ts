@@ -7,12 +7,16 @@ import somename = require('./global');
 @Component({
 template:`
     <div *ngFor="let data of details|slice:itemid-1:itemid; let i = index;">
-    <img src="{{data.url}}" alt="pic">
-    <p><em><b>Name:</b></em>{{data.name}}<p>
-    <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}<p>
-    <p><em><b>Color:</b></em>{{data.color}}<p>
-    <p><em><b>Description: </b></em>{{data.desc}}</p>
-    <button (click)="gc.getCart(data)" class="btn btn-success">Add to Cart</button> 
+    <div class="col-md-12">
+        <img class="col-md-6" src="{{data.url}}" alt="pic" style="margin-top:50px;">
+        <div class="col-md-6" style="margin-top:150px;">
+            <p><em><b>Name:</b></em>{{data.name}}<p>
+            <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}<p>
+            <p><em><b>Color:</b></em>{{data.color}}<p>
+            <p><em><b>Description: </b></em>{{data.desc}}</p>
+            <button (click)="gc.getCart(data)" class="btn btn-success">Add to Cart</button> 
+        </div>
+    </div>
     </div>`
 })
 

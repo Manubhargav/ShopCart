@@ -13,10 +13,11 @@ import {cartComponent} from './app.cart';
 import {reactiveComponent} from './app.reactive';
 import {ReactiveFormsModule} from '@angular/forms';
 import {finalComponent} from './app.final';
+import {Ng2Webstorage} from 'ng2-webstorage';
 
 @NgModule({
   imports: [
-    BrowserModule,ReactiveFormsModule,
+    BrowserModule,ReactiveFormsModule, Ng2Webstorage,
     FormsModule, HttpModule,RouterModule.forRoot([{
     path:'Flashdeals',component:menComponent},
     { path:'Home',component:advertiseComponent},

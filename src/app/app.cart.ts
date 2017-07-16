@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AppComponent} from './app.component'
 import somename = require('./global');
+import {LocalStorage,LocalStorageService} from 'ng2-webstorage';
 
 @Component({
     template:`
@@ -12,15 +13,23 @@ import somename = require('./global');
 })
 
 export class cartComponent implements OnInit{
+    // @LocalStorage() 
     public cart:any=[];
     public sum:any=0;
+
+    constructor(private storage:LocalStorageService) {}
+
     ngOnInit(){
         // console.log(somename.gcart)    
         // this.total+=this.cart[0].price
         // console.log(this.total);
         this.cart=somename.gcart;
         this.sum=somename.total; 
-       
+        // localStorage["cart"] = JSON.stringify(this.cart);
+
+        // this.cart = JSON.parse(localStorage["cart"]);
+        // this.storage.store('boundValue2', this.cart);
+        // this.cart1 = this.storage.retrieve('boundValue2');
           
     }   
     compute(){

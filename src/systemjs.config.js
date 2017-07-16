@@ -22,6 +22,7 @@
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      'ng2-webstorage': 'node_modules/ng2-webstorage',
 
       // other libraries
       'rxjs':                      'npm:rxjs',
@@ -39,7 +40,9 @@
       },
       rxjs: {
         defaultExtension: 'js'
-      }
+      },
+      'ng2-webstorage': {main: 'bundles/core.umd.js', defaultExtension: 'js'}
+      
     }
   });
 })(this);
