@@ -6,14 +6,14 @@ import somenam = require('./global');
     <h3 *ngFor="let details of detail"><span style="text-decoration:underline">Order Details</span> <br/> <h4>Name:{{details[0]}}<br/></h4>
      <h4>Address:{{details[1]+" ,"+details[2]+" -"
     +details[3]}}</h4></h3>
-    <button class="btn"><a href="/Home">Shop more</a></button>`
+    <a href="/Home"> <button class="btn">Shop more</button></a>`
 })
 export class finalComponent implements OnInit{
     detail:any=[];
     ngOnInit(){
         this.detail=somenam.detail;
-        console.log(this.detail)
+       
     }
-    
+
 
 }

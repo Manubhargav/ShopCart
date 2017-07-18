@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 @Component({
 selector:'men-list',
-template:`<div style="height: 81.75vh;overflow: auto">
+template:`<div style="height: 81.75vh;overflow: auto" class="force-overflow" id="style-3">
    <h2>50% Off On Men's product</h2>
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-md-4" *ngFor="let item of details" (click)="onSelect(item)">            
+   <div class="container-fluid " >
+      <div class="row ">
+         <div class="col-md-4 "  *ngFor="let item of details" (click)="onSelect(item)">            
          <img class="img-responsive" src="{{item.url}}" alt="book" class="img-responsive" style="height:40vh" >
          <p style="text-align:center"><b>{{item.name}}</b></p>
       </div>

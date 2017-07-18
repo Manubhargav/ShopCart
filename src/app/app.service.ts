@@ -7,6 +7,7 @@ import somenam = require('./global');
 @Injectable()
 export class appService{
    private _url="apidata/listdata.json"
+   public cart:any=[];
     constructor(private _http: Http){}
     getData(){
         return this._http.get(this._url)
@@ -14,7 +15,14 @@ export class appService{
         
     }
     getCart(data:any){
-        return somename.gcart.push(data);
+        var old = JSON.parse(localStorage.getItem('cart')) || [];
+        old.push(data);
+
+        localStorage.setItem('cart', JSON.stringify(old));
+
+        this.cart = JSON.parse(localStorage.getItem('cart'));
+        return this.cart;
+        // return somename.gcart.push(data);
     }
     getDetail(data:any){
         return somenam.detail.push(data)

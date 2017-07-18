@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav on-mouseover="badge()" (click)="badge()" class="navbar navbar-default">
    <div class="container-fluid">
       <div class="navbar-header">
          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -26,18 +26,18 @@
          </div>
          </form>
          <ul class="nav navbar-nav navbar-right">
-            <li class="btn btn-default" routerLink="/cart"><img src="http://www.iconsdb.com/icons/preview/white/shopping-cart-xxl.png" style="width:20px;height:20px"><li class="badge" style="color:blue">{{cart.length}}</li></li>
+            <li  style="padding:10px" routerLink="/cart" ><img src="http://www.iconsdb.com/icons/preview/white/shopping-cart-xxl.png" style="width:20px;height:20px"><li class="badge" style="color:white">{{cart.length}}</li></li>
             <li *ngIf="value" style="color:white"><a>{{ "Welcome "+value}}</a></li>
             <li *ngIf="!value"><button class="btn btn-primary" (click)='Login()'>Login</button></li>
-            <li *ngIf="value"><button class="btn" (click)='logout()'><a href="/Home">Logout</a></button></li>
+            <li *ngIf="value"><a style="padding:0" href="/Home"><button class="btn btn-primary" (click)='logout()'>Logout</button></a></li>
          </ul>
       </div>
    </div>
 </nav>
 <login-form [raw]="raw" [emp]="emp" (onComp)="onComp($event)"></login-form>
-<div class="container-fluid">
-   <div class="row">
-      <div class="col-md-2 col-lg-2" style="box-shadow: 8px 0 6px #aaaaaa;;height: 81.75vh;overflow: auto">
+<div  class="container-fluid" on-mouseover="badge()" (click)="badge()">
+   <div class="row " >
+      <div class="col-md-2 col-lg-2 category  force-overflow " id="style-3" style="box-shadow: 8px 0 6px #aaaaaa;">
          <h2><b>Categories</b></h2>
          <hr>
          <details *ngFor="let category of categories" style="padding-bottom: 10px;">
@@ -49,14 +49,14 @@
          </details>
          <br>
       </div>
-      <div class="col-md-8 col-lg-8" style="height: 81.75vh;overflow: auto;box-shadow: 0 0 6px #aaaaaa;padding-right: 0px;">
-         <router-outlet></router-outlet>
+      <div class="col-md-8 col-lg-8 force-overflow category"  id="style-2" style="box-shadow: 0 0 6px #aaaaaa;padding-right: 0px; overflow-x:hidden;">
+         <router-outlet class=" force-overflow"  id="style-2" (click)="badge()"></router-outlet>
       </div>
-      <div class="col-md-2 col-lg-2" style="height: 81.75vh;overflow: auto;box-shadow:0px 0 6px #aaaaaa;">
+      <div on-mouseover="badge()" (click)="badge()" *ngIf="check()" class="col-md-2 col-lg-2 force-overflow" id="style-2"  style="height: 81.75vh;overflow: auto;box-shadow:0px 0 6px #aaaaaa;">
          <h2 ><a routerLink="/Flashdeals" routerLinkActive="active"> <b>Flash Deals!</b></a></h2>
          <hr>
          <div class="row" >
-            <img class="img-responsive" data-toggle="modal" data-target="#myModal2" src="https://ae01.alicdn.com/kf/HTB1pWBJMpXXXXblXXXXq6xXFXXX0/Spring-2017-girls-Plaid-dress-brand-font-b-children-s-b-font-clothing-kids-dresses-for.jpg" alt="book" class="img-responsive" style="height:40vh">
+            <img class="img-responsive" data-toggle="modal" data-target="#myModal2" src="https://ae01.alicdn.com/kf/HTB1pWBJMpXXXXblXXXXq6xXFXXX0/Spring-2017-girls-Plaid-dress-brand-font-b-children-s-b-font-clothing-kids-dresses-for.jpg" alt="book" class="img-responsive" align="middle">
             <p style="text-align:center"><b>Kid's dress</b></p>
          </div>
          <div class="modal" id="myModal2">
@@ -69,7 +69,7 @@
                   <div class="modal-body  container-fluid">
                      <div class="row">
                         <div class="col-md-6">
-                           <img src="https://ae01.alicdn.com/kf/HTB1pWBJMpXXXXblXXXXq6xXFXXX0/Spring-2017-girls-Plaid-dress-brand-font-b-children-s-b-font-clothing-kids-dresses-for.jpg" alt="book" class="img-responsive" style="height:40vh" >
+                           <img src="https://ae01.alicdn.com/kf/HTB1pWBJMpXXXXblXXXXq6xXFXXX0/Spring-2017-girls-Plaid-dress-brand-font-b-children-s-b-font-clothing-kids-dresses-for.jpg" alt="book" class="img-responsive"  >
                         </div>
                         <div class="col-md-6" *ngFor="let data of data|slice:0:1; let i = index;">
                            <p><em><b>Name:</b></em>{{data.name}}
@@ -91,10 +91,12 @@
             </div>
          </div>
          <div class="row" >
-            <img class="img-responsive" data-toggle="modal" data-target="#myModal" src="http://www.minibazar.in/wp-content/uploads/rado-shine-black.jpg" alt="book" class="img-responsive" style="height:40vh" >
+            <img class="img-responsive" data-toggle="modal" data-target="#myModal" src="http://www.minibazar.in/wp-content/uploads/rado-shine-black.jpg" alt="book" class="img-responsive"  >
             <p style="text-align:center"><b>Men's  watch</b></p>
          </div>
       </div>
+      <div *ngIf="check()==false" class="col-md-2" ><img class="img-responsive" style="height:35em" src="https://www.adlabz.com/adnetwork/uploads/Thd1wm_300x250-online-shopping-with-Best%20Deals-offers.gif"></div>
+      
       <div class="modal" id="myModal">
          <div class="modal-dialog">
             <div class="modal-content">
@@ -105,7 +107,7 @@
                <div class="modal-body  container-fluid">
                   <div class="row">
                      <div class="col-md-6">
-                        <img src="http://www.minibazar.in/wp-content/uploads/rado-shine-black.jpg" alt="book" class="img-responsive" style="height:40vh" >
+                        <img src="http://www.minibazar.in/wp-content/uploads/rado-shine-black.jpg" alt="book" class="img-responsive"  >
                      </div>
                      <div class="col-md-6" *ngFor="let data of data|slice:1:2; let i = index;">
                         <p><em><b>Name:</b></em>{{data.name}}
@@ -127,8 +129,9 @@
          </div>
       </div>
    </div>
+
 </div>
-<footer>
+<footer on-mouseover="badge()" (click)="badge()">
    <div class="text-right center-block" style="padding-right: 32px">
       <a href="#"><i class="fa fa-facebook-square fa-3x social"></i></a>
       <a href="#"><i class="fa fa-twitter-square fa-3x social"></i></a>

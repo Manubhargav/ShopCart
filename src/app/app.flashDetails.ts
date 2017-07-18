@@ -7,9 +7,9 @@ import somename = require('./global');
 @Component({
 template:`
     <div *ngFor="let data of details|slice:itemid-1:itemid; let i = index;">
-    <div class="col-md-12">
-        <img class="col-md-6" src="{{data.url}}" alt="pic" style="margin-top:50px;">
-        <div class="col-md-6" style="margin-top:150px;">
+    <div class="col-md-12 force-overflow" id="style-3">
+        <img class="col-md-6 img-responsive" src="{{data.url}}" alt="pic" style="margin-top:50px;">
+        <div class="col-md-6 " style="margin-top:150px;" >
             <p><em><b>Name:</b></em>{{data.name}}<p>
             <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}<p>
             <p><em><b>Color:</b></em>{{data.color}}<p>

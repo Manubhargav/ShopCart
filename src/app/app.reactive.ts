@@ -39,7 +39,7 @@ template:`
 <div class="form-group">
 <input type="checkbox" name="active" ngModel required formControlName="check">I understand the terms and conditions
 </div>
-<button type="submit" class="btn btn-success" [disabled]="!userform.valid" (click)="gd.getDetail([refname.value,refstreet.value,refcity.value,refpincode.value])">Place order</button>
+<button type="submit" class="btn btn-success" [disabled]="!userform.valid" (click)="gd.getDetail([refname.value,refstreet.value,refcity.value,refpincode.value]) ; rip()">Place order</button>
 </form>
 
 `,
@@ -67,9 +67,12 @@ userform=new FormGroup({
 
 });
 onSub(){
-    alert("Thanks for shopping");
+  
     this.route.navigate(["/detail"])
 }
+rip(){
+     localStorage.removeItem('cart');
+ } 
 
 
 }

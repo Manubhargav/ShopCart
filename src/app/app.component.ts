@@ -37,9 +37,10 @@ export class AppComponent implements OnInit{
     this.emp1=false;
     // this.value=false;
      
-    this.storage.clear('boundValue');
-    console.log(this.storage);
+    // this.storage.clear('boundValue');
+   
       this.storage.clear(); //clear all the managed storage items
+    localStorage.clear();
     
   
   }
@@ -50,11 +51,13 @@ export class AppComponent implements OnInit{
   constructor(private _data1:appService,private router:Router, private storage:LocalStorageService){}
   ngOnInit(){
    
-      this.cart=somename.gcart;
+    // this.cart=somename.gcart;
     
+    this.cart = JSON.parse(localStorage.getItem('cart')) || [];
     
     this._data1.getData()
     .subscribe(res => this.data=res);
+   
 
     // localStorage["cart"] = JSON.stringify(this.cart);
 
@@ -72,13 +75,38 @@ export class AppComponent implements OnInit{
      
      
   }
-  
+  badge(){
+    this.cart = JSON.parse(localStorage.getItem('cart')) || [];
+  }
 onSelect(cat:any){
     this.router.navigate(['/Home',cat])
 }
 add(data:any){
-    alert("added to ur cart "+data.name)
-    somename.gcart.push(data);
+    
+    // somename.gcart.push(data);
+
+    // let old = JSON.parse(localStorage["cart"]);
+
+    // let old = localStorage.getItem("cart");
+  
+
+    var old = JSON.parse(localStorage.getItem('cart')) || [];
+  
+
+    // localStorage["cart"] = JSON.stringify(old+data);
+    // this.cart = JSON.parse(localStorage["cart"]);
+
+    // localStorage.setItem("cart",old+data);
+    // this.cart = localStorage.getItem("cart");
+
+    old.push(data);
+
+    localStorage.setItem('cart', JSON.stringify(old));
+
+    this.cart = JSON.parse(localStorage.getItem('cart'));
+
+
+    
     
     // somename.total=0;
     // for (var number of somename.gcart) {
@@ -91,13 +119,13 @@ add(data:any){
 onmatch(data:any){
     for(let i of this.categories){
      
-      if(i.x.toLowerCase()==data.toLowerCase() || this.partial(data,i.x)){
+      if((i.x.toLowerCase()==data.toLowerCase() || this.partial(data,i.x))&& data.length>2){
         this.router.navigate(['/Home',i.x])
         this.flag=false;
       }else{
         
         for(let j of i.y){
-          if(j.toLowerCase()==data.toLowerCase() || this.partial(data,j)){
+          if(j.toLowerCase()==data.toLowerCase() || this.partial(data,j) && data.length>2){
              this.router.navigate(['/Home',j])
              this.flag=false;
           }
@@ -111,14 +139,20 @@ onmatch(data:any){
 partial(data:any,data2:any){
   
     let a=data.length;
-    console.log(data2.slice(0,a))
+   
     
     if(data2.slice(0,a).toLowerCase()==data.toLowerCase()){
       return true;
     }
     return false;
   }
- 
+ check(){
+   if(window.location.pathname=="/cart"){
+     return false
+   }else{
+     return true
+   }
+ }
 }
   
 
