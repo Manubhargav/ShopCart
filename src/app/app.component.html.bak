@@ -1,47 +1,43 @@
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <h2><b>Categories</b></h2>
-         <hr>
-         <details *ngFor="let category of categories" style="padding-bottom: 10px;">
-            <summary (click)="onSelect(category.x)"><b>{{category.x | uppercase}}</b></summary>
-            <ul *ngFor="let cat of category.y" style="list-style: none">
-               <li  (click)="onSelect(cat)" onclick="closeNav()">{{cat}}</li>
-            </ul>
-            <hr>
-         </details>
-         <br>
-</div>
-
-<header>
-      <nav>
-        <div class="logo" >
-          <a href="#" style="color:white">{{name1}}</a>
-        </div>
-        <div class="icon">
-          <span onclick="openNav()" class="toggle">&#9776;</span>
-        </div>
-        <form class="form1" role="search" >
+<nav on-mouseover="badge()" (click)="badge()" class="navbar navbar-default">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#">{{name1}}</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+            <li class="dropdown">
+               <a value="Category" href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Category<span class="caret"></span></a>
+               <ul class="dropdown-menu" role="menu">
+                  <li *ngFor="let category of categories"><a (click)="onSelect(category.x)">{{category.x}}</a></li>
+               </ul>
+            </li>
+         </ul>
+         <form class="navbar-form navbar-left" role="search" >
             <div class="form-group">
-               <input size="10"type="text" class="form-control" #refsearch placeholder="Search">
+               <input type="text" class="form-control" #refsearch placeholder="Enter atleast 3 chars">
             
-            <button type="submit" class="btn btn-default" (click)="onmatch(refsearch.value)"><img style="width:15px;height:15px" src="http://www.iconsdb.com/icons/preview/white/search-3-xxl.png" alt="search"></button>
+            <button type="submit" class="btn btn-default" (click)="onmatch(refsearch.value)"><img style="width:20px;height:20px" src="http://www.iconsdb.com/icons/preview/white/search-3-xxl.png" alt="search"></button>
          </div>
          </form>
-        <ul class="list-item">
-            <li routerLink="/cart" ><img src="http://www.iconsdb.com/icons/preview/white/shopping-cart-xxl.png" style="width:20px;height:20px"><li class="badge" style="color:blue">{{cart.length}}</li></li>
+         <ul class="nav navbar-nav navbar-right">
+            <li  style="padding:10px" routerLink="/cart" ><img src="http://www.iconsdb.com/icons/preview/black/shopping-cart-xxl.png" style="width:20px;height:20px"><li class="badge" style="color:blue">{{cart.length}}</li></li>
             <li *ngIf="value" style="color:blue"><a>{{ "Welcome "+value}}</a></li>
             <li *ngIf="!value"><button class="btn btn-primary" (click)='Login()'>Login</button></li>
             <li *ngIf="value"><a style="padding:0" href="/Home"><button class="btn btn-primary" (click)='logout()'>Logout</button></a></li>
-        </ul>
-      </nav>
-</header>
-
-
-
+         </ul>
+      </div>
+   </div>
+</nav>
 <login-form [raw]="raw" [emp]="emp" (onComp)="onComp($event)"></login-form>
 <div  class="container-fluid" on-mouseover="badge()" (click)="badge()">
    <div class="row " >
-      <div class="col-md-2 col-lg-2 category sidebar  force-overflow " id="style-3" style="box-shadow: 8px 0 6px #aaaaaa;">
+      <div class="col-md-2 col-lg-2 category  force-overflow " id="style-3" style="box-shadow: 8px 0 6px #aaaaaa;">
          <h2><b>Categories</b></h2>
          <hr>
          <details *ngFor="let category of categories" style="padding-bottom: 10px;">
@@ -53,7 +49,7 @@
          </details>
          <br>
       </div>
-      <div class="col-md-8 col-lg-8 force-overflow category"  id="style-3" style="box-shadow: 0 0 6px #aaaaaa;padding-right: 0px; overflow-x:hidden;">
+      <div class="col-md-8 col-lg-8 force-overflow category"  id="style-2" style="box-shadow: 0 0 6px #aaaaaa;padding-right: 0px; overflow-x:hidden;">
          <router-outlet class=" force-overflow"  id="style-2" (click)="badge()"></router-outlet>
       </div>
       <div on-mouseover="badge()" (click)="badge()" *ngIf="check()" class="col-md-2 col-lg-2 force-overflow" id="style-2"  style="height: 81.75vh;overflow: auto;box-shadow:0px 0 6px #aaaaaa;">
@@ -98,14 +94,12 @@
             <img class="img-res" src="http://www.minibazar.in/wp-content/uploads/rado-shine-black.jpg" alt="book" class="img-responsive"  >
             <p style="text-align:center"><b>Men's  watch</b></p>
          </div>-->
-         <a href="#style-3">
-         <div (click)="onSelect('Clothing')" >
+         <div >
                <img class="img-res" src="https://ae01.alicdn.com/kf/HTB1pWBJMpXXXXblXXXXq6xXFXXX0/Spring-2017-girls-Plaid-dress-brand-font-b-children-s-b-font-clothing-kids-dresses-for.jpg">
                 <p style="text-align:center"><b>Kid's dress</b></p>
 
          </div>
-         </a>
-         <div (click)="onSelect('Men Accesorries')">
+         <div >
                <img class="img-res" src="http://www.minibazar.in/wp-content/uploads/rado-shine-black.jpg">
                            <p style="text-align:center"><b>Men's  watch</b></p>
 

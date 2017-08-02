@@ -10,13 +10,13 @@ template:`
             <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:  </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -28,13 +28,13 @@ template:`
             <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -46,13 +46,13 @@ template:`
                 <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -65,13 +65,13 @@ template:`
                <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -84,13 +84,13 @@ template:`
                <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -103,13 +103,13 @@ template:`
                <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -122,13 +122,13 @@ template:`
                <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -141,13 +141,13 @@ template:`
                <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -160,13 +160,13 @@ template:`
                <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -179,13 +179,13 @@ template:`
                <div class="col-md-12">
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
+                     <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
+                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
                      <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
+                     <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
+                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
