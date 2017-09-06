@@ -34,7 +34,7 @@ export class LoginComponent {
    call(value:string,value1:string){
        if(value==value1){
            this.storage.store('boundValue', value);
-           console.log(this.storage);
+           
            this.attribute = this.storage.retrieve('boundValue');
             this.onComp.emit(this.attribute);      
        } 
