@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
     selector:'my-advertise',
 template:`<h5 style="text-align: center;padding:0px;"><b>CHECK WHAT'S NEW!</b></h5>
                           
-    <div class="carousel">
+    <div class="carousel" style="margin-top:10px;">
     <div class="carousel-inner">
         <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
         <div class="carousel-item">
