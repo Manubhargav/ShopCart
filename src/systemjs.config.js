@@ -22,9 +22,10 @@
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-      'ng2-webstorage': 'node_modules/ng2-webstorage',
+      
 
       // other libraries
+	  'ng2-webstorage': 'npm:ng2-webstorage',
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
     },

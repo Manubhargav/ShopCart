@@ -11,10 +11,11 @@ const routes:Routes=[{
     path:'Flashdeals',component:menComponent},
     { path:'Home',component:advertiseComponent},
     { path: 'Flashdeals/:id', component: flashComponent },
-     { path: 'Home/:cat', component: catComponent },
-      { path: 'cart', component: cartComponent },
-       { path: 'form', component: reactiveComponent },
-       {path: 'detail', component: finalComponent},
+    { path: 'Home/:cat', component: catComponent },
+    { path: 'cart', component: cartComponent },
+    { path: 'form', component: reactiveComponent },
+    {path: 'detail', component: finalComponent},
+    {path: 'detail/extra', loadChildren: './app/extramodule/extra.module#ExtraModule'},
     { path:'', redirectTo: '/Home', pathMatch: 'full' }];
 
 @NgModule({

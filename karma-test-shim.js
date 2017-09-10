@@ -50,6 +50,7 @@ System.config({
     '@angular/http/testing': 'npm:@angular/http/bundles/http-testing.umd.js',
     '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
     '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',
+	'ng2-webstorage': 'npm:ng2-webstorage'
   },
 });
 

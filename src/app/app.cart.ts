@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AppComponent} from './app.component'
 import somename = require('./global');
-import {LocalStorage,LocalStorageService} from 'ng2-webstorage';
+
 
 @Component({
     template:`
@@ -17,7 +17,6 @@ export class cartComponent implements OnInit{
     public cart:any=[];
     public sum:any=0;
 
-    constructor(private storage:LocalStorageService) {}
 
     ngOnInit(){
         // console.log(somename.gcart)    

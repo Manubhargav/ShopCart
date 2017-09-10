@@ -8,16 +8,22 @@ import {AppRoutingModule} from './app-routing.module';
 import {routingComponents} from './app-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {Ng2Webstorage} from 'ng2-webstorage';
-
+import { HeroJobAdComponent }   from './hero-job-ad.component';
+import { AdBannerComponent }    from './ad-banner.component';
+import { HeroProfileComponent } from './hero-profile.component';
+import { AdDirective }          from './ad.directive';
 @NgModule({
   imports: [
     BrowserModule,ReactiveFormsModule, Ng2Webstorage,
     FormsModule, HttpModule,AppRoutingModule
   ],
   declarations: [
-    AppComponent, LoginComponent,routingComponents
+    AppComponent, LoginComponent,routingComponents,AdBannerComponent,
+                  HeroJobAdComponent,
+                  HeroProfileComponent,
+                  AdDirective 
   ],
-  
+   entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
