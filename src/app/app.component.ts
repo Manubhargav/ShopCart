@@ -3,6 +3,9 @@ import { appService } from './app.service';
 import {Router} from '@angular/router';
 import somename = require('./global');
 import {LocalStorage,LocalStorageService, SessionStorageService} from 'ng2-webstorage';
+import { NavigationEnd} from '@angular/router';
+
+
 
 @Component({
   selector: 'my-app',
@@ -49,6 +52,7 @@ export class AppComponent implements OnInit{
   }
   data:any=[];
   constructor(private _data1:appService,private router:Router, private storage:LocalStorageService){}
+  
   ngOnInit(){
    
     // this.cart=somename.gcart;
@@ -57,7 +61,10 @@ export class AppComponent implements OnInit{
     
     this._data1.getData()
     .subscribe(res => this.data=res);
-   
+
+   this.router.events.subscribe((evt) => {
+          // $("body").animate({"scrollTop": "0px"}, 729);
+        });
 
     // localStorage["cart"] = JSON.stringify(this.cart);
 
@@ -75,6 +82,7 @@ export class AppComponent implements OnInit{
      
      
   }
+  
   badge(){
     this.cart = JSON.parse(localStorage.getItem('cart')) || [];
   }
@@ -153,6 +161,8 @@ partial(data:any,data2:any){
      return true
    }
  }
+
+
 }
   
 

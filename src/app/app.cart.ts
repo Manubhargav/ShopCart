@@ -6,7 +6,7 @@ import {LocalStorage,LocalStorageService} from 'ng2-webstorage';
 @Component({
     template:`
 <div on-mouseover="compute()" (click)="compute()">
-    Following are the items:<h3 *ngFor="let item of cart ;let i=index">{{item.name}} : {{item.price}} <img style="height:25px;padding-left:20px;padding-bottom:2.5px;opacity:0.5"src="https://d30y9cdsu7xlg0.cloudfront.net/png/6447-200.png" (click)="remove(i)"></h3>
+    Following are the items:<h3 *ngFor="let item of cart ;let i=index">{{item.name}} : {{item.price}} <img style="height:25px;padding-left:20px;padding-top:2px;opacity:0.5"src="https://d30y9cdsu7xlg0.cloudfront.net/png/6447-200.png" (click)="remove(i)"></h3>
     <br/><h3> Total Amount: {{sum}}</h3>
     </div>
     <button [disabled]="sum==0" type="submit" routerLink="/form" class="btn btn-primary">Click To Buy</button>`

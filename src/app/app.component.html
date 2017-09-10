@@ -27,7 +27,7 @@
 <div id="main">
 
 <header>
-      <nav>
+      <nav id="test">
         <div class="logo" >
           <a href="#" style="color:white">{{name1}}</a>
         </div>
@@ -72,7 +72,7 @@
     <router-outlet class=" force-overflow"  id="style-2" (click)="badge()"></router-outlet>
       </div>
     <div on-mouseover="badge()" (click)="badge()" *ngIf="check()" class="col-md-2 col-lg-2 force-overflow" id="style-2"  style="height: 81.75vh;box-shadow:0px 0 6px #aaaaaa;">
-         <h2 ><a routerLink="/Flashdeals" routerLinkActive="active"> <b>Flash Deals!</b></a></h2>
+         <h2 id="ad"><a routerLink="/Flashdeals" routerLinkActive="active"> <b>Flash Deals!</b></a></h2>
          <hr>
 
                     
