@@ -1,7 +1,7 @@
 import {Component } from '@angular/core';
 
 @Component({
-    template: `<h3>&nbsp;&nbsp;&nbsp;Rate your experience &#9786;</h3>
+    template: `<h1 [innerHTML]="title"></h1>
     <fieldset class="rating">
     <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
     <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
@@ -18,4 +18,4 @@ import {Component } from '@angular/core';
     <a href="/Home"><button style="padding-left:20px;" > Submit </button></a>    `
 })
 
-export class ExtraComponent {}
+export class ExtraComponent { title="Rate your experience"}
