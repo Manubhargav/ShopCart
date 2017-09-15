@@ -1,69 +1,32 @@
-import {finalComponent } from './app.final';
-import { async,ComponentFixture,TestBed } from "@angular/core/testing";
-import { By }              from '@angular/platform-browser';
-import { DebugElement }    from '@angular/core';
-import somenam = require('./global');
+// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { By }              from '@angular/platform-browser';
+// import { DebugElement }    from '@angular/core';
+// import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
+// import {Router} from '@angular/router';
+// import {LoginComponent} from './login.component';
+// import {AppRoutingModule} from './app-routing.module';
+// import {menComponent} from './app.menComponent';
+// import {advertiseComponent} from './app.advertise';
+// import {flashComponent} from './app.flashDetails';
+// import {catComponent} from './app.catdetails';
+// import {cartComponent} from './app.cart';
+// import {reactiveComponent} from './app.reactive';
+// import {finalComponent} from './app.final';
+// import {AppModule} from './app.module';
+// import {AppComponent} from './app.component';
 
-describe('Final component', () => {
+// describe('finalComponent (templateUrl)', () => {
 
-  let comp:    finalComponent;
-  let fixture: ComponentFixture<finalComponent>;
-  let de:      DebugElement[];
-  let el:      HTMLElement;
-  let detail:any=['test1','test2','test3','test4']
-  let taskTitles: any[];
-  let appServiceStub: {
-    detail: any;
-  };
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ finalComponent ], // declare the test component
-    })
-    // .compileComponents();  // compile template and css
-  }));
-
-   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ finalComponent ], // declare the test component
-       
-      
-    });
-   
-
-    fixture = TestBed.createComponent(finalComponent);
-    comp = fixture.componentInstance; // BannerComponent test instance
-    fixture.whenStable().then(() => {
-    // after something in the component changes, you should detect changes
-    fixture.detectChanges();
-
-    // everything else in the beforeEach needs to be done here.
-     de = fixture.debugElement.queryAll(By.css('h1.test'));
-
-})
-    // query for the title <h1> by CSS element selector
-    // de = fixture.debugElement.queryAll(By.css('h1.test'));
-    // el = de.nativeElement;
-  });
-
- 
-
-  it('should create component', () => expect(de).toBeDefined() );
-   it('should create component', () => {
-       fixture = TestBed.createComponent(finalComponent);
-    comp = fixture.componentInstance; // BannerComponent test instance
-    fixture.whenStable().then(() => {
-    // after something in the component changes, you should detect changes
-    fixture.detectChanges();
-
-    // everything else in the beforeEach needs to be done here.
-     de = fixture.debugElement.queryAll(By.css('h1.test'));
-
-})
-       expect(de).toContain('firstname')
-}
-     );
- 
-
-});
-
+// beforeEach(async(()=>{
+//     TestBed.configureTestingModule({imports:[AppModule]});
+//     TestBed.compileComponents();
+// }));
+// it('displays properly1',()=>
+// {
+//     let fixture =TestBed.createComponent(finalComponent);
+//     fixture.detectChanges();
+//     expect(fixture.nativeElement.textContent).toContain('Order');
+    
+// })
+// });
 

@@ -16,7 +16,7 @@ import {AppModule} from './app.module';
 import {AppComponent} from './app.component';
 import {appService} from './app.service'
 
-describe('loginComponent (templateUrl)', () => {
+describe('reactiveComponent (templateUrl)', () => {
 
 beforeEach(async(()=>{
     TestBed.configureTestingModule({imports:[AppModule],
@@ -28,19 +28,38 @@ beforeEach(async(()=>{
     
     TestBed.compileComponents();
 }));
-it('logincomponent defined properly',()=>
+it('reactive forms defined',()=>
 {
-    let fixture =TestBed.createComponent(LoginComponent);
+    let fixture =TestBed.createComponent(reactiveComponent);
     fixture.detectChanges();
-    expect(fixture.nativeElement).toBeDefined();   
+    expect(fixture.nativeElement).toBeDefined();
+    
 })
-it('template forms contains button',()=>
+it('reactive forms contains name',()=>
 {
-    let fixture =TestBed.createComponent(LoginComponent);
+    let fixture =TestBed.createComponent(reactiveComponent);
     fixture.detectChanges();
-    let loginBtn = fixture.debugElement.query(By.css('.test'));
-    expect(loginBtn).toBeDefined();
+    expect(fixture.nativeElement.textContent).toContain('Name');
+    
 })
+it('reactive forms contains button',()=>
+{
+    let fixture =TestBed.createComponent(reactiveComponent);
+    fixture.detectChanges();
+    let loginBtn = fixture.debugElement.query(By.css('button')).nativeElement;
+    expect(loginBtn.disabled).toBe(true);
+})
+it('reactive forms just checking',()=>
+{
+    let fixture =TestBed.createComponent(reactiveComponent);
+    fixture.detectChanges();
+    let comp = fixture.componentInstance;
+    var returnvalue = comp.onSub();
+    // let loginBtn = fixture.debugElement.query(By.css('button')).nativeElement;
+    expect(returnvalue).toEqual('gfhnjm');
+})
+
+
 
 });
 

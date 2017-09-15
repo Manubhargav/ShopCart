@@ -91,6 +91,7 @@ userform=new FormGroup({
 onSub(){
   
     this.route.navigate(["/detail"])
+    return 'gfhnjm'
 }
 rip(){
      localStorage.removeItem('cart');

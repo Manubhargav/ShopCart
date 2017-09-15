@@ -7,7 +7,7 @@ import {appService} from './app.service'
 @Component({
 template:`
  
-    <div *ngFor="let data of details|slice:itemid-1:itemid; let i = index;" style="color:red">
+    <div *ngFor="let data of details|slice:itemid-1:itemid; let i = index;" style="color:black">
     <div class="col-md-12 force-overflow" id="style-3" >
         <img class="col-md-6 img-responsive" src="{{data.url}}" alt="pic" style="margin-top:50px;">
         <div class="col-md-6 " style="margin-top:150px;" >

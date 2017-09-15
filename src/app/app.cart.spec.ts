@@ -15,7 +15,7 @@ import {finalComponent} from './app.final';
 import {AppModule} from './app.module';
 import {AppComponent} from './app.component';
 
-describe('flashComponent (templateUrl)', () => {
+describe('cartdetailsComponent (templateUrl)', () => {
 
 beforeEach(async(()=>{
     TestBed.configureTestingModule({imports:[AppModule]});
@@ -23,21 +23,21 @@ beforeEach(async(()=>{
 }));
 it('displays properly1',()=>
 {
-    let fixture =TestBed.createComponent(flashComponent);
+    let fixture =TestBed.createComponent(cartComponent);
     fixture.detectChanges();
     expect(fixture.nativeElement).toBeDefined();
     
 })
 it('displays properly2',()=>
 {
-    let fixture =TestBed.createComponent(flashComponent);
+    let fixture =TestBed.createComponent(cartComponent);
     fixture.detectChanges();
-    expect(fixture.nativeElement.textContent).toContain("Rado");
+    expect(fixture.nativeElement.textContent).toContain('Following are the items');
     
 })
 it('displays properly3',()=>
 {
-    let fixture =TestBed.createComponent(flashComponent);
+    let fixture =TestBed.createComponent(cartComponent);
     fixture.detectChanges();
     let styles = window.getComputedStyle(fixture.nativeElement);
     
@@ -47,7 +47,7 @@ it('displays properly3',()=>
 let textDebugElement: DebugElement;
 it('displays properly4',()=>
 {
-    let fixture =TestBed.createComponent(flashComponent);
+    let fixture =TestBed.createComponent(cartComponent);
     fixture.detectChanges();
     textDebugElement = fixture.debugElement.query(By.css("div"));
     let styles = window.getComputedStyle(textDebugElement.nativeElement);
@@ -56,26 +56,7 @@ it('displays properly4',()=>
     
 })
 
-it('displays properly4',()=>
-{
-    let fixture =TestBed.createComponent(flashComponent);
-    fixture.detectChanges();
-    textDebugElement = fixture.debugElement.query(By.css(".col-md-6"));
-    let styles = window.getComputedStyle(textDebugElement.nativeElement);
 
-    expect(styles.marginTop).toContain("50px")
-    
-})
-it('displays properly4',()=>
-{
-    let fixture =TestBed.createComponent(flashComponent);
-    fixture.detectChanges();
-    textDebugElement = fixture.debugElement.query(By.css("div div .col-md-6"));
-    let styles = window.getComputedStyle(textDebugElement.nativeElement);
-
-    expect(styles.marginTop).toContain("50px")
-    
-})
 
 
 });
