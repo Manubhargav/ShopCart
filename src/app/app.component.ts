@@ -9,7 +9,8 @@ import { NavigationEnd} from '@angular/router';
 
 @Component({
   selector: 'my-app',
-  templateUrl: `./app.component.html`
+  templateUrl: `./app.component.html`,
+  providers:[appService]
 })
 export class AppComponent implements OnInit{
   name1 = 'MyApp';
@@ -33,7 +34,6 @@ export class AppComponent implements OnInit{
   onComp(value: any) {
    this.value=value;
    this.emp1=true;
-  //  return this.value;
   }
   logout(){
     this.emp=true;
@@ -125,7 +125,6 @@ add(data:any){
   // this.router.navigate(['/cart'])
 }
 onmatch(data:any){
-  
     for(let i of this.categories){
      
       if((i.x.toLowerCase()==data.toLowerCase() || this.partial(data,i.x))&& data.length>2){
@@ -162,7 +161,7 @@ partial(data:any,data2:any){
      return true
    }
  }
-
+ htmlSnippet = '<b>Categories</b>';
 
 }
   

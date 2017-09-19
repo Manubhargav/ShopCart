@@ -2,13 +2,12 @@ import {Component,OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {AppComponent} from './app.component';
 import {appService} from './app.service'
-// import somename = require('./global');
+import somename = require('./global');
 
 @Component({
 template:`
- 
-    <div *ngFor="let data of details|slice:itemid-1:itemid; let i = index;" style="color:black">
-    <div class="col-md-12 force-overflow" id="style-3" >
+    <div *ngFor="let data of details|slice:itemid-1:itemid; let i = index;">
+    <div class="col-md-12 force-overflow" id="style-3">
         <img class="col-md-6 img-responsive" src="{{data.url}}" alt="pic" style="margin-top:50px;">
         <div class="col-md-6 " style="margin-top:150px;" >
             <p><em><b>Name:</b></em>{{data.name}}<p>
@@ -18,8 +17,7 @@ template:`
             <button (click)="gc.getCart(data)" class="btn btn-success">Add to Cart</button> 
         </div>
     </div>
-    </div>
-    `
+    </div>`
 })
 
 export class flashComponent implements OnInit{

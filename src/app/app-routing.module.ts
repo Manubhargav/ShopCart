@@ -7,7 +7,7 @@ import {catComponent} from './app.catdetails';
 import {cartComponent} from './app.cart';
 import {reactiveComponent} from './app.reactive';
 import {finalComponent} from './app.final';
-const routes:Routes=[{
+export const routes:Routes=[{
     path:'Flashdeals',component:menComponent},
     { path:'Home',component:advertiseComponent},
     { path: 'Flashdeals/:id', component: flashComponent },

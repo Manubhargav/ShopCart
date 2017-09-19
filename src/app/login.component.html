@@ -1,10 +1,12 @@
-<div  *ngIf="raw || emp==false" class="container-fluid">
+<div class="user"style="background-color:white">
+    </div>
+<div *ngIf="raw || emp==false" class="container-fluid">
     <div class="row">
         <div class="col-md-12">
             <form #userform="ngForm" (ngSubmit)="onSubmit(userform.value)"> 
                 <div  class="form-group" >
                 <label>Username:</label>
-                <input type="text" #nameref="ngModel" class="form-control" name="name" ngModel required minlength="4">
+                <input type="text" #nameref="ngModel" class="form-control user" name="name" ngModel required minlength="4">
                 <div *ngIf="nameref.errors && (nameref.dirty || nameref.touched)" class="alert alert-danger">
                     <div [hidden]="!nameref.errors.required">Please enter the Username</div>
                     <div [hidden]="!nameref.errors.minlength">Please enter 4 character username</div>
@@ -18,7 +20,7 @@
                 </div>
                 </div>
                 <br>
-                <button class="btn btn-success test" [disabled]="!userform.form.valid" (click)="call(nameref.value,namepass.value)">Login</button>
+                <button class="btn btn-success" [disabled]="!userform.form.valid" (click)="call(nameref.value,namepass.value)">Login</button>
                 <br>
                 <br>
             </form>

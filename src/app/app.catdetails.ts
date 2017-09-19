@@ -4,7 +4,7 @@ import {appService} from './app.service'
 @Component({
 template:`
     <div class="row">
-   <div [ngSwitch]="true" >
+    <div [ngSwitch]="true" >
       <div *ngSwitchCase="catName=='Men'">
          <div *ngFor="let data of details | slice:0:6; let i = index  ">
             <div class="col-md-12">
@@ -59,7 +59,7 @@ template:`
                </div>
          </div>
       </div>
-      <div   *ngFor="let data of details">
+      <div *ngFor="let data of details">
          <div *ngSwitchCase="catName=='Formals'">
             <div *ngIf="data.cat==catName" class="container-fluid row">
                <div class="col-md-12">

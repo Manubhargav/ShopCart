@@ -14,11 +14,13 @@ import {reactiveComponent} from './app.reactive';
 import {finalComponent} from './app.final';
 import {AppModule} from './app.module';
 import {AppComponent} from './app.component';
-
+import {appService} from './app.service';
 describe('catdetailsComponent (templateUrl)', () => {
 
 beforeEach(async(()=>{
-    TestBed.configureTestingModule({imports:[AppModule]});
+    TestBed.configureTestingModule({imports:[AppModule],
+    providers:[appService]
+});
     TestBed.compileComponents();
 }));
 it('displays properly1',()=>

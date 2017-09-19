@@ -14,11 +14,13 @@ import {reactiveComponent} from './app.reactive';
 import {finalComponent} from './app.final';
 import {AppModule} from './app.module';
 import {AppComponent} from './app.component';
-
+import {appService} from './app.service';
 describe('flashComponent (templateUrl)', () => {
 
 beforeEach(async(()=>{
-    TestBed.configureTestingModule({imports:[AppModule]});
+    TestBed.configureTestingModule({imports:[AppModule],
+     providers:[appService]
+    });
     TestBed.compileComponents();
 }));
 it('displays properly1',()=>
@@ -56,7 +58,7 @@ it('displays properly4',()=>
     
 })
 
-it('displays properly4',()=>
+it('displays properly5',()=>
 {
     let fixture =TestBed.createComponent(flashComponent);
     fixture.detectChanges();
@@ -66,7 +68,7 @@ it('displays properly4',()=>
     expect(styles.marginTop).toContain("50px")
     
 })
-it('displays properly4',()=>
+it('displays properly6',()=>
 {
     let fixture =TestBed.createComponent(flashComponent);
     fixture.detectChanges();

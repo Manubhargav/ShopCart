@@ -3,7 +3,7 @@
   <a href="#" style="padding-left:0;"><img style="height:3em;padding-top:8px;"src="https://thelamc.org/images/menu-icons/Menu-icon-home.png"></a>
   <a *ngIf="value" style="color:white" class="wname1">{{ "Welcome "+value}}</a>
   <div style="padding-left:10px;padding-right:10px;">
-  <h2><b>CATEGORIES</b></h2>
+  <h2  [innerHTML]="htmlSnippet | uppercase"></h2>
          <details *ngFor="let category of categories" style="padding-top: 10px;">
             <summary (click)="onSelect(category.x)"><b>{{category.x | uppercase}}</b></summary>
             <ul *ngFor="let cat of category.y" style="list-style: none">
@@ -59,12 +59,12 @@
    <div class="row " >
       <div class="col-md-2 col-lg-2 category sidebar  force-overflow " id="style-3" style="box-shadow: 8px 0 6px #aaaaaa;">
         
-         <h2><b>Categories</b></h2>
+         <h2 [innerHTML]="htmlSnippet"></h2>
          <hr>
          <details *ngFor="let category of categories" style="padding-bottom: 10px;">
-            <summary (click)="onSelect(category.x)"><b>{{category.x | uppercase}}</b></summary>
+            <summary (click)="onSelect(category.x)"><b [myHighlight]="color"  defaultColor="blue">{{category.x | uppercase}}</b></summary>
             <ul *ngFor="let cat of category.y" style="list-style: none">
-               <li  (click)="onSelect(cat)" >{{cat}}</li>
+               <li  (click)="onSelect(cat)"[myHighlight]="color" (click)="color='pink'">{{cat}}</li>
             </ul>
             <hr>
          </details>
@@ -101,6 +101,7 @@
                            <p><em><b>Color:</b></em>{{data.color}}
                            <p>
                            <p><em><b>Description: </b></em>{{data.desc}}</p>
+						   <p  *ngFor="let hero of ('apidata/extradata.json' | fetch) "><b>Replacement:</b>{{hero.replacement}}
                             <div >
                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                      <button type="button" class="btn btn-primary" data-dismiss="modal"(click)="add(data)">Add to Cart</button>
@@ -149,6 +150,7 @@
                            <p><em><b>Color:</b></em>{{data.color}}
                            <p>
                            <p><em><b>Description: </b></em>{{data.desc}}</p>
+                           <p  *ngFor="let hero of ('apidata/extradata.json' | fetch) "><b>Replacement:</b>{{hero?.replacement}}
                             <div >
                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                      <button type="button" class="btn btn-primary" data-dismiss="modal"(click)="add(data)">Add to Cart</button>

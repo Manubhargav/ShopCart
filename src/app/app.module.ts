@@ -8,11 +8,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {routingComponents} from './app-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {Ng2Webstorage} from 'ng2-webstorage';
-import {HeroJobAdComponent}   from './hero-job-ad.component';
-import {AdBannerComponent}    from './ad-banner.component';
-import {HeroProfileComponent} from './hero-profile.component';
-import {AdDirective}          from './ad.directive';
-import {appService} from './app.service';
+import { HeroJobAdComponent }   from './hero-job-ad.component';
+import { AdBannerComponent }    from './ad-banner.component';
+import { HeroProfileComponent } from './hero-profile.component';
+import { AdDirective }          from './ad.directive';
+import {highlightDirective} from './highlight.directive';
+import { FetchJsonPipe} from './app.fetch';
 @NgModule({
   imports: [
     BrowserModule,ReactiveFormsModule, Ng2Webstorage,
@@ -22,10 +23,9 @@ import {appService} from './app.service';
     AppComponent, LoginComponent,routingComponents,AdBannerComponent,
                   HeroJobAdComponent,
                   HeroProfileComponent,
-                  AdDirective 
+                  AdDirective,highlightDirective, FetchJsonPipe
   ],
    entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
-  bootstrap: [ AppComponent ],
-  providers:[appService]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {}

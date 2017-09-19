@@ -22,10 +22,6 @@ beforeEach(async(()=>{
     TestBed.configureTestingModule({imports:[AppModule],
     providers: [appService],
 });
-    
-      
-    
-    
     TestBed.compileComponents();
 }));
 it('logincomponent defined properly',()=>
@@ -38,9 +34,17 @@ it('template forms contains button',()=>
 {
     let fixture =TestBed.createComponent(LoginComponent);
     fixture.detectChanges();
-    let loginBtn = fixture.debugElement.query(By.css('.test'));
+    let loginBtn = fixture.debugElement.query(By.css('button'));
     expect(loginBtn).toBeDefined();
 })
+it('template forms contains button',()=>
+{
+    let fixture =TestBed.createComponent(LoginComponent);
+    fixture.detectChanges();
+     let textDebugElement = fixture.debugElement.query(By.css("div.user"));
+     let styles = window.getComputedStyle(textDebugElement.nativeElement);
 
+    expect(styles.backgroundColor).toBe("rgb(255, 255, 255)");
+})
 });
 

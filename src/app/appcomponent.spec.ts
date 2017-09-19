@@ -76,7 +76,15 @@ it('functions checking return value',()=>
     expect(rv).toEqual(true);
     
 })
-it('oncomp functions checking value',()=>
+it('badge functions checking value1',()=>
+{
+    let fixture =TestBed.createComponent(AppComponent);
+    let comp = fixture.componentInstance;
+    var rv = comp.badge();
+    expect(rv).toBeUndefined();
+    
+})
+it('oncomp functions checking value2',()=>
 {
     let fixture =TestBed.createComponent(AppComponent);
     let comp = fixture.componentInstance;
@@ -84,15 +92,38 @@ it('oncomp functions checking value',()=>
     expect(rv).toBeUndefined();
     
 })
-it('oncomp functions checking value',()=>
+it('oncomp functions checking value3',()=>
+{
+    let fixture =TestBed.createComponent(AppComponent);
+    let element = fixture.debugElement.query(By.css(".badge"));
+  
+    expect(element.nativeElement.textContent).toBeDefined();
+    
+})
+it('oncomp functions checking value4',()=>
+{
+    let fixture =TestBed.createComponent(AppComponent);
+    let element = fixture.debugElement.query(By.css(".badge"));
+    fixture.detectChanges();
+    expect(element.nativeElement.textContent).toContain('0');
+    
+})
+it('displays properly5',()=>
+{
+    let fixture =TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    let textDebugElement = fixture.debugElement.query(By.css(".wname"));
+    let styles = window.getComputedStyle(textDebugElement.nativeElement); 
+    expect(styles.color).toEqual('rgb(0, 0, 255)');
+})
+it('logout functions checking value2',()=>
 {
     let fixture =TestBed.createComponent(AppComponent);
     let comp = fixture.componentInstance;
-    var rv = comp.onComp('Test User');
+    var rv = comp.logout();
     expect(rv).toBeUndefined();
     
 })
-
 
 });
 
