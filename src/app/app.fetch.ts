@@ -10,8 +10,7 @@ import 'rxjs/add/operator/map';
 export class FetchJsonPipe  implements PipeTransform {
   private cachedData: any = null;
   private cachedUrl = '';
- 
-  constructor(private http: Http) {}
+  constructor(public http: Http) {}
  
   transform(url: string): any {
     if (url !== this.cachedUrl) {

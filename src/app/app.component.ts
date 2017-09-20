@@ -6,7 +6,6 @@ import {LocalStorage,LocalStorageService, SessionStorageService} from 'ng2-webst
 import { NavigationEnd} from '@angular/router';
 
 
-
 @Component({
   selector: 'my-app',
   templateUrl: `./app.component.html`,
@@ -124,6 +123,24 @@ add(data:any){
    
   // this.router.navigate(['/cart'])
 }
+// Custom Alert box
+
+customAlert(msg:any,duration:any)
+{
+ var styler = document.createElement("div");
+  styler.setAttribute("style","background-color:black;width:auto;height:auto;top:20px ;left:40%;position: fixed;color:white");
+ styler.innerHTML = "<p>"+msg+"</p>";
+ setTimeout(function()
+ {
+   styler.parentNode.removeChild(styler);
+ },duration);
+ document.body.appendChild(styler);
+}
+   
+   caller()
+  {
+    this.customAlert("No search results","2000");
+  }
 onmatch(data:any){
     for(let i of this.categories){
      
@@ -140,7 +157,7 @@ onmatch(data:any){
         }
       }   
     }
-     if(this.flag){ alert("no such data")}
+     if(this.flag){ this.caller()}
      this.flag=true;
   }
 

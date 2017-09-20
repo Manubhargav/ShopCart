@@ -15,11 +15,12 @@ import {finalComponent} from './app.final';
 import {AppModule} from './app.module';
 import {AppComponent} from './app.component';
 import {appService} from './app.service'
-
+import {highlightDirective} from './highlight.directive'
 describe('APPComponent ', () => {
 
 beforeEach(async(()=>{
     TestBed.configureTestingModule({imports:[AppModule],
+        
     providers: [appService],
 });
     
@@ -122,6 +123,27 @@ it('logout functions checking value2',()=>
     let comp = fixture.componentInstance;
     var rv = comp.logout();
     expect(rv).toBeUndefined();
+    
+})
+it('should have three highlighted elements', () => {
+     let fixture =TestBed.createComponent(AppComponent);
+    let  des = fixture.debugElement.queryAll(By.directive(highlightDirective));
+  expect(des.length).toBe(0);
+});
+it('Html snippet working',()=>
+{
+    let fixture =TestBed.createComponent(AppComponent);
+    let comp = fixture.componentInstance;
+    var rv = comp.htmlSnippet;
+    expect(rv).toBeDefined();
+    
+})
+it('Html snippet working 1',()=>
+{
+    let fixture =TestBed.createComponent(AppComponent);
+    let comp = fixture.componentInstance;
+    var rv = comp.htmlSnippet;
+    expect(rv).toBe('<b>Categories</b>');
     
 })
 
