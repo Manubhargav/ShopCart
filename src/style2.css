@@ -101,6 +101,9 @@ li{
     padding-left: 15px;
     padding-bottom: 8px;
 }
+select{
+  width: 155px;
+}
 
  [class*="col-"] {
     float: left;
