@@ -6,12 +6,22 @@ import somenam = require('./global');
 import { HeroJobAdComponent }   from './hero-job-ad.component';
 import { HeroProfileComponent } from './hero-profile.component';
 import { AdItem }               from './ad-item';
-
+import {LocalStorage,LocalStorageService} from 'ng2-webstorage';
 @Injectable()
 export class appService{
    private _url="apidata/listdata.json"
    public cart:any=[];
+   
+   
     constructor(private _http: Http){}
+
+//     login1(val1:any) {
+//     this.rawr = val1;
+//     console.log('hello111'+this.rawr);
+// }
+
+
+
     getData(){
         return this._http.get(this._url)
         .map((response:Response) => response.json());

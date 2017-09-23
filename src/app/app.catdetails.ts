@@ -47,11 +47,11 @@ template:`
                   <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
                   <div class="col-md-8">
                      <p><em><b>Name:   </b></em>{{data.name}}
-                     <p>
+                     </p>
                      <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
-                     <p>
+                     </p>
                      <p><em><b>Color:   </b></em>{{data.color}}
-                     <p>
+                     </p>
                      <p><em><b>Description:    </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
@@ -60,10 +60,10 @@ template:`
          </div>
       </div>
       <div *ngFor="let data of details">
-         <div *ngSwitchCase="catName=='Formals'">
+         <div *ngSwitchCase="catName=='Formals'||catName=='Casuals'||catName=='Sports & Active Wear'||catName=='Men Accesorries'||catName=='Men Footwear'||catName=='Grooming and Shaving'||catName=='Western Wear'||catName=='Sports & Active Wears'||catName=='Ethnic Wear'||catName=='Women Footwear'||catName=='Women Accesorries'||catName=='Jewellery'||catName=='Toys'||catName=='School Supplies'||catName=='Clothing'||catName=='Kids Footwear'">
             <div *ngIf="data.cat==catName" class="container-fluid row">
                <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
+                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="category pic">
                   <div class="col-md-8">
                      <p><em><b>Name:   </b></em>{{data.name}}
                      <p>
@@ -72,291 +72,6 @@ template:`
                      <p><em><b>Color:   </b></em>{{data.color}}
                      <p>
                      <p><em><b>Description:    </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Casuals'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:   </b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:   </b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Sports & Active Wear'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:   </b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:   </b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Men Accesorries'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:   </b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:   </b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Men Footwear'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:   </b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:   </b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Grooming and Shaving'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:   </b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:   </b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Western Wear'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:   </b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:   </b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:   </b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description:    </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Sports & Active Wears'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Ethnic Wear'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Women Footwear'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Women Accesorries'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Jewellery'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Toys'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='School Supplies'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Clothing'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
-                     <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
-                     </button>
-                  </div>
-               </div>
-               <hr>
-            </div>
-         </div>
-         <div *ngSwitchCase="catName=='Kids Footwear'">
-            <div *ngIf="data.cat==catName" class="container-fluid row">
-               <div class="col-md-12">
-                  <img  class="img-responsive col-md-4" src="{{data.url}}" alt="pic">
-                  <div class="col-md-8">
-                     <p><em><b>Name:</b></em>{{data.name}}
-                     <p>
-                     <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                     <p>
-                     <p><em><b>Color:</b></em>{{data.color}}
-                     <p>
-                     <p><em><b>Description: </b></em>{{data.desc}}</p>
                      <button class="btn-success btn" (click)="gc.getCart(data)"> Add to Cart
                      </button>
                   </div>
@@ -386,7 +101,7 @@ export class catComponent implements OnInit{
         {"id":111,"name":"Bags","cat":"Women Accesorries","color":"Black","price":200,"desc":"The coolest bags present in market","url":"https://4.imimg.com/data4/AL/OG/MY-2409344/right-choice-women-s-fashion-shoulder-handbag-5no-heavy-zip-500x500.jpg"},
         {"id":112,"name":"jewellery","cat":"Jewellery","color":"Black","price":1000,"desc":"The coolest jewllery present in market","url":"https://cdn.shopify.com/s/files/1/1088/7532/t/6/assets/feature3.jpg?4762852817932839041"},
         {"id":113,"name":"toys","cat":"Toys","color":"Black","price":200000,"desc":"The coolest toys present in market","url":"http://ecx.images-amazon.com/images/I/51OcLXDTxOL.jpg"},
-        {"id":114,"name":"schools","cat":"School Supplies","color":"Black","price":3000,"desc":"The coolest schoolbags present in market","url":"https://s-media-cache-ak0.pinimg.com/736x/17/2f/37/172f3714ee40d164351b147c272350bb--teen-backpacks-school-backpacks.jpg"},
+        {"id":114,"name":"school bag","cat":"School Supplies","color":"Black","price":3000,"desc":"The coolest schoolbags present in market","url":"https://s-media-cache-ak0.pinimg.com/736x/17/2f/37/172f3714ee40d164351b147c272350bb--teen-backpacks-school-backpacks.jpg"},
         {"id":115,"name":"kids dress","cat":"Clothing","color":"Black","price":20000,"desc":"The coolest kids dress present in market","url":"https://s-media-cache-ak0.pinimg.com/736x/9e/c9/43/9ec94356145327ff16cfb3354b2b80d5.jpg"},
         {"id":116,"name":"kids footwear","cat":"Kids Footwear","color":"Black","price":2000,"desc":"The coolest kids footwear present in market","url":"https://ddstep.com.au/wp-content/uploads/2015/08/children_shoes_perth_kids_footwear_AC290-39BM06-500x500.jpg"}
        

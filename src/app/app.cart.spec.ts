@@ -15,13 +15,13 @@ import {finalComponent} from './app.final';
 import {AppModule} from './app.module';
 import {AppComponent} from './app.component';
 
-describe('cartdetailsComponent (templateUrl)', () => {
+fdescribe('cartdetailsComponent (templateUrl)', () => {
 
 beforeEach(async(()=>{
     TestBed.configureTestingModule({imports:[AppModule]});
     TestBed.compileComponents();
 }));
-it('displays properly1',()=>
+fit('displays properly1',()=>
 {
     let fixture =TestBed.createComponent(cartComponent);
     fixture.detectChanges();
@@ -35,13 +35,13 @@ it('displays properly2',()=>
     expect(fixture.nativeElement.textContent).toContain('Following are the items');
     
 })
-it('displays properly3',()=>
+fit('displays properly3',()=>
 {
     let fixture =TestBed.createComponent(cartComponent);
     fixture.detectChanges();
     let styles = window.getComputedStyle(fixture.nativeElement);
     
-    expect(styles.color).toEqual('rgb(0, 0, 0)');
+    expect(styles.color).toEqual('rgb(0, 0, 1)');
     
 })
 let textDebugElement: DebugElement;

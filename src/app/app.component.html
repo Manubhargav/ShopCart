@@ -77,10 +77,6 @@
          <h2 id="ad"><a routerLink="/Flashdeals" routerLinkActive="active"> <b>Flash Deals!</b></a></h2>
          <hr>
 
-                    
-
-
-         
          <div class="modal" id="myModal2">
             <div class="modal-dialog">
                <div class="modal-content">
@@ -95,11 +91,11 @@
                         </div>
                         <div class="col-md-6" *ngFor="let data of data|slice:0:1; let i = index;">
                            <p><em><b>Name:</b></em>{{data.name}}
-                           <p>
+                           </p>
                            <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                           <p>
+                           </p>
                            <p><em><b>Color:</b></em>{{data.color}}
-                           <p>
+                           </p>
                            <p><em><b>Description: </b></em>{{data.desc}}</p>
 						   <p  *ngFor="let hero of ('apidata/extradata.json' | fetch) "><b>Replacement:</b>{{hero.replacement}}
                             <div >
@@ -144,25 +140,28 @@
                         </div>
                         <div class="col-md-6" *ngFor="let data of data|slice:1:2; let i = index;">
                            <p><em><b>Name:</b></em>{{data.name}}
-                           <p>
+                           </p>
                            <p><em><b>Price:</b></em>{{data.price | currency:'INR'}}
-                           <p>
+                           </p>
                            <p><em><b>Color:</b></em>{{data.color}}
-                           <p>
+                           </p>
                            <p><em><b>Description: </b></em>{{data.desc}}</p>
                            <p  *ngFor="let hero of ('apidata/extradata.json' | fetch) "><b>Replacement:</b>{{hero?.replacement}}
                             <div >
                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                      <button type="button" class="btn btn-primary" data-dismiss="modal"(click)="add(data)">Add to Cart</button>
+                      <a routerLink='/admin'>Click Admin</a>
                   </div>
+                  
                         </div>
                      </div>
                   </div>
-                  
-                 
                </div>
             </div>
          </div>
+                 
+                 
+         
       
      
    </div>

@@ -13,7 +13,9 @@ import { AdBannerComponent }    from './ad-banner.component';
 import { HeroProfileComponent } from './hero-profile.component';
 import { AdDirective }          from './ad.directive';
 import {highlightDirective} from './highlight.directive';
+import { AuthGuard } from "./extramodule/extra.authService";
 import { FetchJsonPipe} from './app.fetch';
+import { appService } from "./app.service";
 @NgModule({
   imports: [
     BrowserModule,ReactiveFormsModule, Ng2Webstorage,
@@ -26,6 +28,7 @@ import { FetchJsonPipe} from './app.fetch';
                   AdDirective,highlightDirective, FetchJsonPipe
   ],
    entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
+   providers:[AuthGuard,appService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

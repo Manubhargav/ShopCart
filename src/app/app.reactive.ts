@@ -68,15 +68,16 @@ import { appService } from './app.service';
 </tr>
 <tr>
 <td><label>Enter captcha &nbsp;&nbsp;&nbsp;&nbsp; </label></td>
-<td><span style="font-family: 'Rock Salt', cursive; border: 2px solid black; background-color: #ccc;" >{{this.foobar}}</span></td><td>
+<td><span style="font-family: 'Sedgwick Ave Display', cursive; border: 2px solid black; background-color: #ccc;" >{{this.foobar}}</span></td><td>
 <span (click)="makeid()"><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-refresh-128.png" style="height:40px;width:40px;"></span></td>
 </tr>
 <tr>
-<td colspan="2"><input type="text" #r1><span class="tooltiptext">Enter valid captcha</span></td>
+<td colspan="2"><input type="text" #r1 on-change="manu(r1.value)"><span class="tooltiptext">Enter valid captcha</span></td>
+<tr><td colspan="2" style="color:red" [hidden]="anyval">Please enter the  valid captcha</td></tr>
 <tr style="font-size:13px;"><td  colspan="2" class="tooltip">
 <input type="checkbox" name="active" ngModel required formControlName="check">I understand the terms and conditions
 </td></tr>
-<button type="submit" class="btn btn-success" [disabled]="!userform.valid" (click)="gd.getDetail([refname.value,refstreet.value,refcity.value,refpincode.value]) ; rip()">Place order</button>
+<button type="submit" class="btn btn-success"  [disabled]="!userform.valid || anyval==false ||checkval==null" (click)="gd.getDetail([refname.value,refstreet.value,refcity.value,refpincode.value]) ; rip()"  >Place order</button>
 </form>
 </table>
   
@@ -96,7 +97,77 @@ select.ng-valid
 export class reactiveComponent implements OnInit {
 
     foobar:any;
+    anyval:boolean=true;
+    checkval:any=null;
+    manu(val:any){
+        console.log("inside");
+        if(this.foobar==val){
+            console.log("true");
+            this.anyval=true;
+            this.checkval="dsadsa";
+        }else{
+            console.log("false");
+            this.anyval=false;
+            this.makeid();
+            this.checkval=null;
+           
+            
+        }
+    }
+        ngOnInit() {
+        // this.foobar = this.country_arr;
+        // console.log(this.s_a);
+        var option_str: any = document.getElementById('country');
+        option_str.length = 0;
+        option_str.options[0] = new Option('Select Country', '');
+        option_str.selectedIndex = 0;
+        let index = 1;
+        for (let i of this.country_arr) {
+            option_str.options[index] = new Option(i, String(index));
+            // console.log(i+'---'+String(index));
+            index++;
+        }
+        this.makeid();
+        
+    }
+    onSub() {
 
+        this.route.navigate(["/detail"])
+        return 'gfhnjm'
+    }
+    rip() {
+        localStorage.removeItem('cart');
+    }
+
+    print_state(state_index: any) {
+        // console.log("Inside printstate  ---> " + state_index)
+        if (state_index != 0) {
+            var option_str: any = document.getElementById('state');
+            option_str.length = 0;	// Fixed by Julian Woods
+            option_str.options[0] = new Option('Select State', '');
+            option_str.selectedIndex = 0;
+            var state_arr = this.s_a[state_index].split("|");
+            let index = 1;
+            for (let i of state_arr) {
+                option_str.options[index] = new Option(i, i);
+                index++;
+            }
+        }
+
+    }
+
+    makeid() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+
+    for (let i of [1,2,3,4,5]){
+
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+     this.foobar = text;
+    // console.log(text)
+    // return text;
+    }
     country_arr: any[] = new Array("Afghanistan", "Albania", "Algeria", "American Samoa", "Angola", "Anguilla", "Antartica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Island", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czeck Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia, The", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City)", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Ireland, Northern", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Man, Isle of", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcaim Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romainia", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Scotland", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and South Sandwich Islands", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Tobago", "Toga", "Tokelau", "Tonga", "Trinidad", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "USA", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands", "Wales", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
     s_a: any[] = new Array("", "Badakhshan|Badghis|Baghlan|Balkh|Bamian|Farah|Faryab|Ghazni|Ghowr|Helmand|Herat|Jowzjan|Kabol|Kandahar|Kapisa|Konar|Kondoz|Laghman|Lowgar|Nangarhar|Nimruz|Oruzgan|Paktia|Paktika|Parvan|Samangan|Sar-e Pol|Takhar|Vardak|Zabol",
         "Berat|Bulqize|Delvine|Devoll (Bilisht)|Diber (Peshkopi)|Durres|Elbasan|Fier|Gjirokaster|Gramsh|Has (Krume)|Kavaje|Kolonje (Erseke)|Korce|Kruje|Kucove|Kukes|Kurbin|Lezhe|Librazhd|Lushnje|Malesi e Madhe (Koplik)|Mallakaster (Ballsh)|Mat (Burrel)|Mirdite (Rreshen)|Peqin|Permet|Pogradec|Puke|Sarande|Shkoder|Skrapar (Corovode)|Tepelene|Tirane (Tirana)|Tirane (Tirana)|Tropoje (Bajram Curri)|Vlore",
@@ -372,59 +443,6 @@ export class reactiveComponent implements OnInit {
         state: new FormControl(null, [Validators.required])
 
     });
-    ngOnInit() {
-        // this.foobar = this.country_arr;
-        // console.log(this.s_a);
-        var option_str: any = document.getElementById('country');
-        option_str.length = 0;
-        option_str.options[0] = new Option('Select Country', '');
-        option_str.selectedIndex = 0;
-        let index = 1;
-        for (let i of this.country_arr) {
-            option_str.options[index] = new Option(i, String(index));
-            // console.log(i+'---'+String(index));
-            index++;
-        }
-        this.makeid();
-        
-    }
-    onSub() {
 
-        this.route.navigate(["/detail"])
-        return 'gfhnjm'
-    }
-    rip() {
-        localStorage.removeItem('cart');
-    }
-
-    print_state(state_index: any) {
-        console.log("Inside printstate  ---> " + state_index)
-        if (state_index != 0) {
-            var option_str: any = document.getElementById('state');
-            option_str.length = 0;	// Fixed by Julian Woods
-            option_str.options[0] = new Option('Select State', '');
-            option_str.selectedIndex = 0;
-            var state_arr = this.s_a[state_index].split("|");
-            let index = 1;
-            for (let i of state_arr) {
-                option_str.options[index] = new Option(i, i);
-                index++;
-            }
-        }
-
-    }
-
-    makeid() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for (let i of [1,2,3,4,5]){
-
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-     this.foobar = text;
-    // console.log(text)
-    // return text;
-    }
 
 }

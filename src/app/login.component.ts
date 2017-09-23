@@ -2,6 +2,7 @@ import { Component, Input,Output } from '@angular/core';
 import {EventEmitter} from '@angular/core';
 import {AppComponent} from './app.component';
 import {LocalStorage,LocalStorageService} from 'ng2-webstorage';
+import { appService } from "./app.service";
 
 @Component({
   selector: 'login-form',
@@ -19,13 +20,14 @@ export class LoginComponent {
   @Output() onComp=new EventEmitter<any>();
   public attribute:any;
   
-  constructor(private storage:LocalStorageService) {}
+  constructor(private storage:LocalStorageService,private _data1: appService) {}
 
    onSubmit(value:any){
        if(value.name==value.password && value.name!='' && value.name.length>=4){
        alert("welcome "+ value.name);
            this.raw=false;
             this.emp=true;
+          
            
        }else{
            alert("Please enter username and password correctly");
